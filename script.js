@@ -6,12 +6,17 @@ let isAlive = true
 let responseMessage = ''
 let gameMessage = document.getElementById("message")
 
-// Store the total-element <p> in a new variable called theTotal.
+// Store the cards <p> in a variable.
+let theCards = document.getElementById("cards-element")
 
+// Store the total-element <p> in a new variable called theTotal.
 let theTotal = document.getElementById("total-element")
 
 
-function startGame() {
+function playGame() {
+    // Show the cards on the page
+    theCards.textContent = "Cards: " + firstCard + ", " + secondCard
+
     // Display theTotal on the page
     theTotal.textContent = "The sum is: " + sum
 
@@ -25,6 +30,12 @@ function startGame() {
         isAlive = false
     }
     gameMessage.textContent = responseMessage
+}
+
+function newCard() {
+    console.log("Drawing a new card from the deck.")
+    let card = 2
+    playGame()
 }
 
 
